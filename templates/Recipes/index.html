@@ -1,0 +1,33 @@
+{% extends 'Recipes/../base.html' %}
+{% block recipes %}
+{% load staticfiles %}
+    {% if latest_recipe_list %}
+        <section class="review-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <div class="active-review-carusel">
+                        {% for recipe in latest_recipe_list %}
+                            <div class="single-review">
+								<img src="img/user.png" alt="">
+								<h4><a href="{% url 'detail' recipe.id %}">{{ recipe.recette_description }}</a></h4>
+								<div class="star">
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star"></span>
+								</div>
+								<p>
+									“Description of the recipe ”
+								</p>
+							</div>
+                        {% endfor %}
+                   </div>
+                </div>
+            </div>
+        </section>
+                        {% else %}
+                                   <p>No polls are available.</p>
+                        {% endif %}
+
+{% endblock %}
