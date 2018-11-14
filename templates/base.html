@@ -23,16 +23,16 @@
 			CSS
 			============================================= -->
 			<link rel="stylesheet" type="text/css" href="{% static 'Recipes/myCSS.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'Recipes/css/bootstrap.css' %}" />
-<link rel="stylesheet" href="{% static 'Recipes/css/linearicons.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/font-awesome.min.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/bootstrap.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/magnific-popup.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/jquery-ui.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/nice-select.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/animate.min.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/owl.carousel.css' %}">
-<link rel="stylesheet" href="{% static 'Recipes/css/main.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'Recipes/css/bootstrap.css' %}" />
+            <link rel="stylesheet" href="{% static 'Recipes/css/linearicons.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/font-awesome.min.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/bootstrap.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/magnific-popup.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/jquery-ui.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/nice-select.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/animate.min.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/owl.carousel.css' %}">
+            <link rel="stylesheet" href="{% static 'Recipes/css/main.css' %}">
 		</head>
 		<body>
 			<header id="header">
@@ -40,7 +40,6 @@
 					<div class="container">
 				  		<div class="row justify-content-center">
 						      <div id="logo">
-						        <a href="Recipes/index.html"><img src="img/logo.png" alt="" title="" /></a>
 						      </div>
 				  		</div>
 					</div>
@@ -49,9 +48,16 @@
 					<div class="row align-items-center justify-content-center d-flex">
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <li><a href="Recipes/index.html">Home</a></li>
-				          <li><a href="menu.html">Menu</a></li>
-				          <li><a href="contact.html">Contact</a></li>
+				            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'index' %}">Cookbook</a></li>
+                            <li><a href="{% url 'myrecipe' %}">My Recipe</a></li>
+                            {% if user.is_authenticated %}
+                              <li><a href="{% url 'profile' %}">Profile</a></li>
+                              <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                              <li><a href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+				          <!---<li><a href="contact.html">Contact</a></li>-->
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
 					</div>
@@ -59,21 +65,42 @@
 			</header><!-- #header -->
 
 			<!-- start banner Area -->
-			<section class="banner-area">
+			<section class="relative about-banner">
+				<div class="overlay overlay-bg"></div>
 				<div class="container">
-					<div class="row fullscreen align-items-center justify-content-between">
-						<div class="col-lg-12 banner-content">
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<p class="text-white link-nav"></p>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- End banner Area -->
 
-			<!-- Start review Area -->
-            {% block recipes %}
+
+
+
+            <div>
+                {% block accounts %}
 
 
             {% endblock %}
+            </div>
+
+            <div>
+                {% block content %}
+
+
+            {% endblock %}
+            </div>
+			<!-- Start review Area -->
+            <div>
+               {% block recipes %}
+
+
+            {% endblock %}
+            </div>
+
 
 			<!-- End review Area -->
 
