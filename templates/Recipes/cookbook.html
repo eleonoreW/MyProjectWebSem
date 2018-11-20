@@ -1,38 +1,128 @@
 {% extends 'Recipes/../base.html' %}
 {% block recipes %}
 {% load staticfiles %}
-    {% if latest_recipe_list %}
-        <section class="review-area section-gap">
-            <div class="container">
-                <div class="row">
-                    <div class="active-review-carusel">
 
-
-                        {% for recipe in latest_recipe_list %}
-                            <div class="single-review">
-								<img src="img/user.png" alt="">
-								<h4><a href="{% url 'detail' recipe.id %}">{{ recipe.recette_description }}</a></h4>
-								<!---
-								<div class="star">
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star"></span>
-								</div>-->
-								<p>
-									“Description of the recipe ”
-								</p>
+    <!-- Start top-category-widget Area -->
+    <section class="top-category-widget-area pt-90 pb-90 ">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="single-cat-widget">
+								<div class="content relative">
+									<div class="overlay overlay-bg"></div>
+								    <a href="#" target="_blank">
+								      <div class="thumb">
+								  	  </div>
+								      <div class="content-details">
+								      </div>
+								    </a>
+								</div>
 							</div>
-                        {% endfor %}
+						</div>
+						<div class="col-lg-4">
+							<div class="single-cat-widget">
+								<div class="content relative">
+									<div class="overlay overlay-bg"></div>
+								    <a href="#" target="_blank">
+								      <div class="thumb">
+								  	  </div>
+								      <div class="content-details">
+								      </div>
+								    </a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="single-cat-widget">
+								<div class="content relative">
+									<div class="overlay overlay-bg"></div>
+								    <a href="#" target="_blank">
+								      <div class="thumb">
+								  	  </div>
+								      <div class="content-details">
+								      </div>
+								    </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+    <!-- End top-category-widget Area -->
 
+    {% if latest_recipe_list %}
+    <!-- Start post-content Area -->
+    <section class="post-content-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 posts-list">
 
-                   </div>
+                    {% for recipe in latest_recipe_list %}
+                    <!-- Une recette -->
+                    <div class="single-post row">
+                        <div class="col-lg-3  col-md-3 meta-details">
+                            <div class="user-details row">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 ">
+                            <div class="feature-img">
+                                <img class="img-fluid" src="{% static 'Recipes/img/sable.jpg' %}" alt="">
+                            </div>
+                            <a class="posts-title" href="{% url 'detail' recipe.id %}"><h3>{{ recipe.recette_description }}</h3></a>
+                            <p class="excert">
+                                <h4>Ingrédients :</h4>
+                                <ul class="unordered-list">
+                                    <li>250g de farine</li>
+                                    <li>125g de cassonade</li>
+                                    <li>125g de beurre</li>
+                                    <li>2 oeufs</li>
+                                    <li>1 pincée de muscade</li>
+                                    <li>1/2 cuillère à café de cannelle</li>
+                                    <li>1/2 cuillère à café de bicarbonate</li>
+                                </ul><br/>
+                                <h4>Préparation</h4>
+                                <ol class="ordered-list">
+                                <li><span>Travaillez tous les ingrédients, puis ramenez la pâte en boule. Couvrez-la avec un linge et laissez reposer dans un endroit frais jusqu'au lendemain.</span></li>
+                                <li><span>Confectionnez des petites formes au choix avec la pâte et faites cuire à four doux sur des platines beurrées.</span></li>
+                                <li><span>Cuire 15 à 20 min à 180°C (thermostat 6).</span></li>
+                            </ol>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fin recette -->
+                       {% endfor %}
+
+                    <!-- Pagination-->
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                        <span class="lnr lnr-chevron-left"></span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a href="#" class="page-link">01</a></li>
+                            <li class="page-item"><a href="cookbook_deux.html" class="page-link">02</a></li>
+                            <li class="page-item"><a href="cookbook_trois.html" class="page-link">03</a></li>
+
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <span aria-hidden="true">
+                                        <span class="lnr lnr-chevron-right"></span>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
+
             </div>
-        </section>
-                        {% else %}
-                                   <p>No polls are available.</p>
-                        {% endif %}
+        </div>
+    </section>
+    <!-- End post-content Area -->
+    {% else %}
+        <p>No recipe available.</p>
+    {% endif %}
 
 {% endblock %}

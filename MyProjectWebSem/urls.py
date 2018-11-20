@@ -18,12 +18,11 @@ from django.urls import path
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.defaults import page_not_found
-from django.views.generic import TemplateView
 
 from MyProjectWebSem import views
 
 urlpatterns = [
-    url(r'^Recipes/', include('Recipes.urls')), #this line added
+    url(r'^Recipes/', include('Recipes.urls')),
     url(r'^admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
