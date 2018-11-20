@@ -38,10 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Recipes.apps.RecipesConfig',
-    'accounts.apps.AccountsConfig',
-    'users.apps.UsersConfig'
+    'accounts.apps.AccountsConfig'
 ]
-AUTH_USER_MODEL = 'users.CustomUser'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

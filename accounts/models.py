@@ -7,10 +7,10 @@ from django.dispatch import receiver
 
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, related_name='user',on_delete=models.CASCADE,)
+    user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE, )
     gender = models.CharField(max_length=140)
-    height = models.DecimalField(default=Decimal('000.0'),max_digits=5, decimal_places=1)
-    weight = models.DecimalField(default=Decimal('000.0'),max_digits=5, decimal_places=1)
+    height = models.DecimalField(default=Decimal('000.0'), max_digits=5, decimal_places=1)
+    weight = models.DecimalField(default=Decimal('000.0'), max_digits=5, decimal_places=1)
     city = models.CharField(max_length=140, blank=True, default='')
 
     def __str__(self):

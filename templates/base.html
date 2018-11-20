@@ -1,4 +1,5 @@
 {% load static %}
+<!DOCTYPE html>
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -51,12 +52,11 @@
                             <li><a href="{% url 'index' %}">Cookbook</a></li>
                             <li><a href="{% url 'myrecipe' %}">My Recipe</a></li>
                             {% if user.is_authenticated %}
-                                <li><a href="{% url 'profile' %}">Profile</a></li>
-                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                              <li><a href="{% url 'profile' %}">Profile</a></li>
+                              <li><a href="{% url 'logout' %}">Logout</a></li>
                             {% else %}
-                                <li><a href="{% url 'login' %}">Login</a></li>
+                              <li><a href="{% url 'login' %}">Login</a></li>
                                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
-
                             {% endif %}
 				          <!---<li><a href="contact.html">Contact</a></li>-->
 				        </ul>
