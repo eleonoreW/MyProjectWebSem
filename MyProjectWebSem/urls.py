@@ -20,11 +20,13 @@ from django.contrib import admin
 from django.views.defaults import page_not_found
 from django.views.generic import TemplateView
 
+from MyProjectWebSem import views
+
 urlpatterns = [
     url(r'^Recipes/', include('Recipes.urls')), #this line added
     url(r'^admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'), # new
+    url(r'', views.home, name='home'),
     url(r'^404/$', page_not_found, {'exception': Exception()})
 ]
