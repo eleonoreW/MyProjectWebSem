@@ -55,18 +55,17 @@
     <section class="post-content-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 posts-list">
-
+                <div class="col-lg-12 posts-list align-content-center">
                     {% for recipe in latest_recipe_list %}
                     <!-- Une recette -->
-                    <div class="single-post row">
+                    <div class="single-post row ">
                         <div class="col-lg-3  col-md-3 meta-details">
                             <div class="user-details row">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12 ">
                             <div class="feature-img">
-                                <img class="img-fluid" src="{% static 'Recipes/img/sable.jpg' %}" alt="">
+                                <img class="img-fluid" width="200px" src="{% static 'Recipes/img/sable.jpg' %}" alt="Recipe image">
                             </div>
                             <a class="posts-title" href="{% url 'detail' recipe.id %}"><h3>{{ recipe.recette_description }}</h3></a>
                             <p class="excert">

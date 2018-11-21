@@ -24,8 +24,10 @@ from MyProjectWebSem import views
 urlpatterns = [
     url(r'^Recipes/', include('Recipes.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^contact', views.contact, name='contact'),
     path('accounts/', include('accounts.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'', views.home, name='home'),
+    url(r'', views.cookbook, name='cookbook'),
     url(r'^404/$', page_not_found, {'exception': Exception()})
 ]
