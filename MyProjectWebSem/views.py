@@ -31,3 +31,17 @@ def cookbook(request):
     latest_recipe_list = Recette.objects.order_by('-pub_date')
     context = {'latest_recipe_list': latest_recipe_list}
     return render(request, 'Recipes/cookbook.html', context)
+# def search(request):
+#     query = request.GET.get('query')
+#     if not query:
+#         Recipes = Recipes.objects.all()
+#     else:
+#         Recipes = Recipes.objects.filter(recipe__icontains=query)
+#     if not Recipes.exists():
+#         Recipes = Recipes.objects.filter(ingredient__name__icontains=query)
+#     title = "Résultats pour la requête %s"%query
+#     context = {
+#         'recettes': Recipes,
+#         'ingredients': ingredient
+#     }
+#     return render(request, 'store/search.html', context)
