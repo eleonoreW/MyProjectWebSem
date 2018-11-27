@@ -1,0 +1,26 @@
+{% extends 'Recipes/../base.html' %}
+{% block diets %}
+{% load staticfiles %}
+
+<h1><strong>Page d'information g&eacute;n&eacute;rale sur les diff&eacute;rents types de r&eacute;gimes alimentaires</strong></h1>
+<p><strong>Il existe neuf diff&eacute;rents types de r&eacute;gimes:</strong></p>
+<h2 class="p1"><a href="{% url 'regime1' %}"><span class="s1"><strong>Le r&eacute;gime Hyperprot&eacute;in&eacute;</strong></span><span class="s2">&nbsp;</span></a></h2>
+<p class="p1"><span class="s1">C&rsquo;est l&rsquo;un des r&eacute;gimes les plus connus. En adoptant une alimentation importante en prot&eacute;ines, le r&eacute;gime hyperprot&eacute;in&eacute; permet de perdre rapidement des kilos tout en gardant sa masse musculaire. Afin de compenser le manque de graisse, on mange plus de prot&eacute;ines (viandes, &oelig;ufs, poissons).</span></p>
+<h2 class="p1"><span class="s1"><strong><a href="{% url 'regime2' %}">Le r&eacute;gime prot&eacute;in&eacute;</a>&nbsp;</strong></span></h2>
+<p class="p2"><span class="s2">Le r&eacute;gime prot&eacute;in&eacute; est un r&eacute;gime hypocalorique dont est le but est d&rsquo;augmenter les apports quotidiens en prot&eacute;ines. Les prot&eacute;ines permettent une perte de poids rapide. Les repas sont soit compos&eacute; d&rsquo;aliments riches en prot&eacute;ines, soit des substituts de repas prot&eacute;in&eacute;s, vendus en sachets.</span></p>
+<h2 class="p1"><a href="{% url 'regime3' %}"><span class="s1"><strong>Le r&eacute;gime hypocalorique&nbsp;</strong></span></a></h2>
+<p class="p2"><span class="s2">Le r&eacute;gime hypocalorique permet d&rsquo;abaisser les sucres et les mati&egrave;res grasses afin d&acute;obliger son corps &agrave; puiser son &eacute;nergie dans ses r&eacute;serves de graisse. R&eacute;sultat ? Une perte de poids imm&eacute;diate. Etant tr&egrave;s restrictif, il est recommand&eacute; de surveiller que le r&eacute;gime hypocalorique ne vous procure pas de carences en &eacute;l&eacute;ments nutritionnels.</span></p>
+<h2><a href="{% url 'regime4' %}">Le r&eacute;gime dissoci&eacute;&nbsp;</a></h2>
+<p class="p2"><span class="s2">Les r&eacute;gimes dissoci&eacute;s, qui ne reposent sur aucun argument scientifique, autorisent de manger de tout (ou presque), mais pas au m&ecirc;me moment. Aucun aliment n&rsquo;est interdit, mais plusieurs aliments de nature diff&eacute;rente ne peuvent &ecirc;tre consomm&eacute;s ensemble.</span></p>
+<h2 class="p1"><span class="s1"><strong><a href="{% url 'regime5' %}">Le r&eacute;gime V&eacute;g&eacute;tarien</a>&nbsp;</strong></span></h2>
+<p class="p2"><span class="s2">Pour ceux qui veulent mixer hygi&egrave;ne de vie, convictions morales et poids de forme. Cependant, il est d&eacute;conseill&eacute; aux enfants et aux femmes enceintes en raison des carences qu'il pourrait provoquer. Il exclut les prot&eacute;ines d&rsquo;origine animale.</span></p>
+<h2 class="p1"><span class="s1"><strong><a href="{% url 'regime6' %}">Le r&eacute;gime anticellulite</a>&nbsp;</strong></span></h2>
+<p class="p2"><span class="s2">La cellulite touche aussi bien les minces que les rondes. Et les causes sont nombreuses : s&eacute;dentarit&eacute;, manque d&rsquo;activit&eacute; ou alimentation d&eacute;s&eacute;quilibr&eacute;e. Le r&eacute;gime anti-cellulite convient &agrave; toutes celles qui veulent en finir avec la cellulite.</span></p>
+<h2 class="p1"><span class="s1"><strong><a href="regime6.html">Le r&eacute;gime sans sel</a>&nbsp;</strong></span></h2>
+<p class="p2"><span class="s2">Le sel bouche les art&egrave;res et notamment celles du c&oelig;ur. Ce qui &agrave; long terme peut conduire &agrave; des ennuis de sant&eacute; tel que l&rsquo;infarctus. Le chlorure de sodium, plus commun&eacute;ment appel&eacute; sel, retient l&rsquo;eau dans l&rsquo;organisme et les cellules. Avec le r&eacute;gime sans sel, on diminue la quantit&eacute; de sel dans le corps et par cons&eacute;quent la quantit&eacute; d&rsquo;eau.</span></p>
+<h2 class="p1"><a href="{% url 'regime7' %}"><span class="s1"><strong>Le r&eacute;gime hypoglucidique</strong></span></a></h2>
+<p class="p2"><span class="s2">Le r&eacute;gime Low Carb met &agrave; l&rsquo;index tous les sucres. En effet, selon ce r&eacute;gime, seuls les glucides simples ou complexes font grossir. Le r&eacute;sultat imm&eacute;diat du Low Carb est une perte de poids (sous forme de graisse et d&rsquo;eau), mais &agrave; moyen et long terme, les cons&eacute;quences sur la sant&eacute; peuvent &ecirc;tre graves.</span></p>
+<h2 class="p1"><a href="{% url 'regime9' %}"><span class="s1"><strong>Le r&eacute;gime d&eacute;tox&nbsp;</strong></span></a></h2>
+<p class="p2"><span class="s2">Apr&egrave;s des exc&egrave;s ou simplement pour se sentir mieux, faire un r&eacute;gime d&eacute;tox permet en seulement quelques jours de se sentir plus en forme. Jus d&eacute;tox, soupes, tisanes, on chouchoute notre foie pour lui permettre d&rsquo;&eacute;liminer les toxines de notre corps. On vous dit tout sur le r&eacute;gime d&eacute;tox, cette cure bien-&ecirc;tre.</span></p>
+
+{% endblock %}

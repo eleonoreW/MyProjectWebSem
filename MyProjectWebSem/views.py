@@ -17,6 +17,28 @@ def home(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def diets(request):
+    return render(request, 'Diets/diets.html')
+
+def regime1(request):
+    return render(request, 'Diets/regime1.html')
+def regime2(request):
+    return render(request, 'Diets/regime2.html')
+def regime3(request):
+    return render(request, 'Diets/regime3.html')
+def regime4(request):
+    return render(request, 'Diets/regime4.html')
+def regime5(request):
+    return render(request, 'Diets/regime5.html')
+def regime6(request):
+    return render(request, 'Diets/regime6.html')
+def regime7(request):
+    return render(request, 'Diets/regime7.html')
+def regime8(request):
+    return render(request, 'Diets/regime8.html')
+def regime9(request):
+    return render(request, 'Diets/regime9.html')
+
 
 def detail(request, recipe_id):
     recipe = get_object_or_404(Recette, pk=recipe_id)
