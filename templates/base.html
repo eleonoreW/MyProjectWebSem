@@ -19,9 +19,7 @@
 		<title>Perfect Recipes</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-			<!--
-			CSS
-			============================================= -->
+			<!-- CSS============================================= -->
 			<link rel="stylesheet" type="text/css" href="{% static 'Recipes/myCSS.css' %}" />
             <link rel="stylesheet" type="text/css" href="{% static 'Recipes/css/bootstrap.css' %}" />
             <link rel="stylesheet" href="{% static 'Recipes/css/linearicons.css' %}">
@@ -51,10 +49,10 @@
 				            <li><a href="{% url 'home' %}">Home</a></li>
                             <li><a href="{% url 'index' %}">Carnet de recettes</a></li>
                             <li><a href="{% url 'myrecipe' %}">Ma recette</a></li>
-                            <li><a href="{% url 'diets' %}">Régimes</a></li>
+                            <li><a href="{% url 'diets' %}">R&eacute;gimes</a></li>
                             {% if user.is_authenticated %}
                               <li><a href="{% url 'profile' %}">Profil</a></li>
-                              <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+                              <li><a href="{% url 'logout' %}">Se d&eacute;connecter</a></li>
                             {% else %}
                               <li><a href="{% url 'login' %}">Se connecter</a></li>
                                 <li><a href="{% url 'signup' %}">S'inscrire</a></li>
@@ -118,31 +116,35 @@
 						<div class="row section-gap">
 							<div class="col-lg-4  col-md-6 col-sm-6">
 								<div class="single-footer-widget">
-									<h4>Notre équipe</h4>
+									<h4>Notre &eacute;quipe</h4>
 									<ul class="hr-list">
 										<li class="d-flex justify-content-between">
-											<span>Ségolène Hebert</span>
+											<span>S&eacute;golène Hebert</span>
 										</li>
 										<li class="d-flex justify-content-between">
-											<span> Rayhana Khadija</span>
+											<span> Rayhana Msadek</span>
 										</li>
-										<li class="d-flex justify-content-between">
-											<span>Sarah Kieffer</span>
-										</li>
-										<li class="d-flex justify-content-between">
-											<span>Éléonore Wald</span>
-										</li>
-
-
-                                    </ul>
-
+									</ul>
 								</div>
 							</div>
 							<div class="col-lg-4  col-md-6 col-sm-6">
 								<div class="single-footer-widget">
-									<h4>Contact Us</h4>
+									<h4><b>Notre &eacute;quipe </b></h4>
+									<ul class="hr-list">
+										<li class="d-flex justify-content-between">
+											<span>Sarah Kieffer</span>
+										</li>
+										<li class="d-flex justify-content-between">
+											<span>&eacute;l&eacute;onore Wald</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4  col-md-6 col-sm-6">
+								<div class="single-footer-widget">
+									<h4>Nous contacter</h4>
 									<p>
-										555 Boulevard de l'Université, <br/>
+										555 Boulevard de l'Universit&eacute;, <br/>
 										Chicoutimi, QC G7H 2B1
 									</p>
 									<p class="number">
@@ -150,32 +152,6 @@
 									</p>
 								</div>
 							</div>
-							<div class="col-lg-4  col-md-6 col-sm-6">
-								<div class="single-footer-widget">
-									<h4>Newsletter</h4>
-									<div class="d-flex flex-row" id="mc_embed_signup">
-										  <form class="navbar-form" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get">
-										    <div class="input-group add-on align-items-center d-flex">
-										      	<input class="form-control" name="EMAIL" placeholder="Your Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your Email address'" required="" type="email">
-												<div style="position: absolute; left: -5000px;">
-													<input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
-												</div>
-										      <div class="input-group-btn">
-										        <button class="genric-btn"><span class="lnr lnr-arrow-right"></span></button>
-										      </div>
-										    </div>
-										      <div class="info mt-20"></div>
-										  </form>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="footer-bottom-wrap">
-					<div class="container">
-						<div class="row footer-bottom d-flex justify-content-between align-items-center">
-							<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</div>
 					</div>
 				</div>

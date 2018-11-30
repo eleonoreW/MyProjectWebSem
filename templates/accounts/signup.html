@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
 {% block accounts %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign up</button>
-  </form>
+<section class="sample-text-area">
+    <div class="container">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-content">
+            <h2 class="flow-text">S'inscrire</h2><br/><br/>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="genric-btn primary" style="float: left;" type="submit">Sign up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

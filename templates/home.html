@@ -7,27 +7,15 @@
             <div class="container">
                 <div class="row">
                     <div class="active-review-carusel">
-
-
                         {% for recipe in latest_recipe_list %}
                             <div class="single-review">
-								<img src="img/user.png" alt="">
-								<h4><a href="{% url 'detail' recipe.id %}">{{ recipe.recette_description }}</a></h4>
-								<!---
-								<div class="star">
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star"></span>
-								</div>-->
-								<p>
-									“Description of the recipe ”
-								</p>
+                            <a class="posts-title" href="{% url 'detail' recipe.id %}"><h1><b>{{ recipe.recette_description }}</b></h1></a>
+								<div class="feature-img">
+                                <img class="img-fluid" style="height:300px;" src="{{ recipe.image }}" alt="Recipe image">
+                            </div>
+
 							</div>
                         {% endfor %}
-
-
                    </div>
                 </div>
             </div>
