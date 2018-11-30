@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.forms import ModelForm
 # the following lines added:
@@ -9,7 +10,12 @@ from django.utils import timezone
 
 class Recette(models.Model):
     recette_description = models.CharField(max_length=200)
+    recette_instructions = models.TextField(max_length=1000,blank=True, null=True);
     pub_date = models.DateTimeField('date published')
+    nombre_part = models.IntegerField(default=0);
+    author = models.ForeignKey(User, on_delete=models.DO_NOTHING ,blank=True, null=True)
+    nbCalories = models.BigIntegerField(default=0,blank=True, null=True)
+    image = models.URLField(default='https://cb2.scene7.com/is/image/CB2/BlackClayDinnerPlate11inSHF16/?$web_product_hero$&161208101132&wid=625&hei=625',blank=True, null=True)
 
     def __str__(self):
         return self.recette_description
@@ -30,4 +36,3 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
-

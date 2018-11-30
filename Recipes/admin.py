@@ -10,7 +10,8 @@ class ChoiceInline(admin.TabularInline):
 class RecetteAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['recette_description']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        ('Description', {'fields': ['recette_instructions','nombre_part','image']}),
+        ('Date information', {'fields': ['pub_date']})
     ]
     inlines = [ChoiceInline]
 
