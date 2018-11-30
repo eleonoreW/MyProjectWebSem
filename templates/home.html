@@ -9,11 +9,11 @@
                     <div class="active-review-carusel">
                         {% for recipe in latest_recipe_list %}
                             <div class="single-review">
-                            <a class="posts-title" href="{% url 'detail' recipe.id %}"><h1><b>{{ recipe.recette_description }}</b></h1></a>
+                            <h1><b>{{ recipe.recette_description }}</b></h1>
 								<div class="feature-img">
                                 <img class="img-fluid" style="height:300px;" src="{{ recipe.image }}" alt="Recipe image">
                             </div>
-
+                            <a class="text-black" href="{% url 'detail' recipe.id %}"><p>Voir la recette</p></a>
 							</div>
                         {% endfor %}
                    </div>

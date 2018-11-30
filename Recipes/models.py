@@ -11,7 +11,7 @@ from django.utils import timezone
 class Recette(models.Model):
     recette_description = models.CharField(max_length=200)
     recette_instructions = models.TextField(max_length=1000,blank=True, null=True);
-    pub_date = models.DateTimeField('date published')
+    pub_date = models.DateTimeField(auto_now_add=True, blank=True)
     nombre_part = models.IntegerField(default=0);
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING ,blank=True, null=True)
     nbCalories = models.BigIntegerField(default=0,blank=True, null=True)
@@ -29,10 +29,10 @@ class Recette(models.Model):
     was_published_recently.short_description = 'Published recently?'
 
 
-class Choice(models.Model):
+class Ingredient(models.Model):
     recette = models.ForeignKey(Recette, on_delete=models.DO_NOTHING, )
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
+    id_ingredient = models.CharField(max_length=200)
+    quantity = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.choice_text
+        return self.id_ingredient

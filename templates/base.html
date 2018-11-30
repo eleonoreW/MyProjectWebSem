@@ -38,6 +38,7 @@
 					<div class="container">
 				  		<div class="row justify-content-center">
 						      <div id="logo">
+                                  <a href="{% url 'home' %}"><img src="{% static 'Recipes/img/logo.png' %}" alt="" title="" /></a>
 						      </div>
 				  		</div>
 					</div>
@@ -50,6 +51,7 @@
                             <li><a href="{% url 'index' %}">Carnet de recettes</a></li>
                             <li><a href="{% url 'myrecipe' %}">Ma recette</a></li>
                             <li><a href="{% url 'diets' %}">R&eacute;gimes</a></li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
                             {% if user.is_authenticated %}
                               <li><a href="{% url 'profile' %}">Profil</a></li>
                               <li><a href="{% url 'logout' %}">Se d&eacute;connecter</a></li>
@@ -57,7 +59,7 @@
                               <li><a href="{% url 'login' %}">Se connecter</a></li>
                                 <li><a href="{% url 'signup' %}">S'inscrire</a></li>
                             {% endif %}
-				          <!---<li><a href="contact.html">Contact</a></li>-->
+
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
 					</div>
@@ -135,7 +137,7 @@
 											<span>Sarah Kieffer</span>
 										</li>
 										<li class="d-flex justify-content-between">
-											<span>&eacute;l&eacute;onore Wald</span>
+											<span>El&eacute;onore Wald</span>
 										</li>
 									</ul>
 								</div>
