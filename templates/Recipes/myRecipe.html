@@ -1,57 +1,111 @@
 {% extends 'base.html' %}
-<!-- Start menu-area Area -->
 {% block content %}
-<section class="menu-area section-gap" id="menu">
-    <div class="container">
-        <div class="row d-flex justify-content-center">
-            <div class="menu-content pb-70 col-lg-8">
-                <div class="title text-center">
-                    <h1 class="mb-10">Entrez les aliments de votre recette</h1>
-                </div>
-            </div>
-        </div>
-        <div class="section-top-border">
-            <div class="row">
-                <div class="col-lg-8 col-md-8">
-                    <h3 class="mb-30">Vos aliments : </h3>
-                    <form action="#">
-                        <div class="mt-10">
-                            <input type="text" name="carotte" placeholder="Carotte" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Carotte'" required class="single-input">
-                        </div>
-                        <div class="mt-10">
-                            <input type="text" name="petits-pois" placeholder="Petits pois" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Petits pois'" required class="single-input">
-                        </div>
-                        <div class="mt-10">
-                            <input type="text" name="sel" placeholder="Sel" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Sel'" required class="single-input">
-                        </div>
+<!-- Start menu-area Area -->
+            <section class="menu-area section-gap" id="menu">
+                <div class="container">
+					<div class="row d-flex justify-content-center">
+						<div class="menu-content pb-70 col-lg-8">
+							<div class="title text-center">
+								<h1 class="mb-10">Entrez votre recette</h1>
+							</div>
+						</div>
+					</div>
+
+					<form action="#">
+						<div class="section-top-border">
+							<div class="row">
+								<div class="col-lg-11 col-md-8 pb-20">
+									<h3 class="mb-30">Nom de votre recette : </h3>
+										<div class="mt-10">
+											<input type="text" name="Sablé à la canelle" placeholder="Sablé à la canelle" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Sablé à la canelle'" required class="single-input">
+										</div>
+								</div>
+								<div class="col-lg-8 col-md-8 pb-20">
+									<h3 class="mb-30">Vos aliments : </h3>
+										<div class="mt-10">
+											<input type="text" name="carotte" placeholder="Carotte" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Carotte'" required class="single-input">
+										</div>
+								</div>
+								<div class="col-lg-3 col-md-4 mt-sm-30 element-wrap">
+									<h3 class="mb-30">Les quantités : </h3>									<div class="mt-10">
+										<input type="number" min="0"  max="100000" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input"><br/>
+								</div>
+							</div>
+               			</div>
+
+						<div class="section-top-border">
+							<div class="row">
+								<div class="col-lg-11 col-md-8 pb-20">
+									<h3 class="mb-30">Description de la recette : </h3>
+									<div class="mt-10">
+										<input type="text" name="mélanger" placeholder="Mélanger" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mélanger'" required class="single-input">
+									</div><br/><br/>
+
+									<h3 class="mb-30">Copiez ici l'url de l'image de votre recette : </h3>
+									<div class="mt-10">
+										<input type="text" name="url" placeholder="Url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Url'" required class="single-input">
+									</div>
+								</div>
+							</div>
+               			</div>
 
 
-                    </form>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-sm-30 element-wrap">
-                    <h3 class="mb-30">Les quantités : </h3>
-                    <form action="#">
-                        <div class="mt-10">
-                                <input type="number" min="0"  max="100000" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input">
-                        </div>
-                        <div class="mt-10">
-                                <input type="number" min="0"  max="100000" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input">
-                        </div>
-                        <div class="mt-10">
-                                <input type="number" min="0"  max="100000" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input">
-                        </div>
+               			<div class="section-top-border">
+							<div class="row">
+								<div class="col-lg-11 col-md-8 pb-20">
+									<h3 class="mb-30">Nombre de personnes : </h3>
+										<div class="mt-10">
+											<input type="number" min="0"  max="100" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input"><br/>
+										</div>
+								</div>
 
-                    </form>
-                </div>
+								<div class="col-lg-11 col-md-8 pb-20">
+									<h3 class="mb-30">Niveau d'activité physique des personnes : </h3>
+									<div class="mt-10">
+										<div class="default-select" id="default-select">
+											<select>
+												<option value="1">Sédentaire</option>
+												<option value="1">Peu actif</option>
+												<option value="1">Actif</option>
+												<option value="1">Très acitf</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-11 col-md-8 pb-20">
+									<h3 class="mb-30">Suivez-vous un régime particulier ? </h3>
+									<div class="mt-10">
+										<div class="default-select" id="default-select">
+											<select>
+												<option value="1">Aucun</option>
+												<option value="1">Hyperprotéiné</option>
+												<option value="1">Protéiné</option>
+												<option value="1">Hypercalorique</option>
+												<option value="1">Hypercalorique</option>
+												<option value="1">Dissocié</option>
+												<option value="1">Végétarien</option>
+												<option value="1">Anticellulite</option>
+												<option value="1">Sans sel</option>
+												<option value="1">Anticellulite</option>
+												<option value="1">Hypoglucidique</option>
+												<option value="1">Détox</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+               			</div>
 
 
-                <div class="col-lg-12">
-                    <div class="alert-msg" style="text-align: left;"></div>
-                    <button class="genric-btn primary" style="float: right;">Envoyer</button>
-                </div>
+						<div class="col-lg-24">
+							<div class="alert-msg" style="text-align: left;"></div>
+							<button class="genric-btn primary" style="float: left;">Envoyer</button>
+						</div>
+					</form>
+				</div>
 
 
-    </div>
-</section>
-<!-- End menu-area Area -->
+            </section>
+            <!-- End menu-area Area -->
 {% endblock %}
