@@ -1,65 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div >
-{% if user.is_authenticated %}
-<div class="container">
-    <div class="row profile">
-		<div class="col-md-3">
-			<div class="profile-sidebar">
-				<!-- SIDEBAR USERPIC -->
-				<div class="profile-userpic">
-					<img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
-				</div>
-				<!-- END SIDEBAR USERPIC -->
-				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						Rihana Msadek
-					</div>
-					<div class="profile-usertitle-job">
-						Régime du chocolat
-					</div>
-				</div>
-				<!-- END SIDEBAR USER TITLE -->
-				<!-- SIDEBAR MENU -->
-				<div class="profile-usermenu">
-					<ul class="nav">
-						<li class="active">
-							<a href="#">
-							<i class="glyphicon glyphicon-home"></i>
-							Informations </a>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-user"></i>
-							Paramétres du compte </a>
-						</li>
-						<li>
-							<a href="#" target="_blank">
-							<i class="glyphicon glyphicon-ok"></i>
-							Régime de nutrition </a>
-						</li>
-						<li>
-							<a href="#">
-							<i class="glyphicon glyphicon-flag"></i>
-							Aide </a>
-						</li>
-					</ul>
-				</div>
-				<!-- END MENU -->
-			</div>
-		</div>
-		<div class="col-md-9">
-            <div class="profile-content">
-			   On peut rajouter les recettes ici...
-            </div>
-		</div>
-	</div>
-    </div>
-    <p>Username : {{ user.username }}</p>
-    <p>Email : {{ user.email }}</p>
-    <p>Height : {{ user.height }}</p>
+    {% if user.is_authenticated %}
+        <div class="container">
+        <p>Username : {{ user.username }}</p>
+        <p>Email : {{ user.email }}</p>
+        <p>Height : {{ user.height }}</p>
+        </div>
     {% else %}
 
     {% endif %}
-    </div>
 {% endblock %}
