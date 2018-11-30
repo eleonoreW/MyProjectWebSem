@@ -23,4 +23,7 @@ def detail(request, recipe_id):
 def myrecipe(request):
     return render(request, 'Recipes/myRecipe.html')
 
+def search(request):
+    return render(request, 'Recipes/search.html')
+
 
