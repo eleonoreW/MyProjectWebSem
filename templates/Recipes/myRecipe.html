@@ -11,16 +11,16 @@
 						</div>
 					</div>
 
-					<form action="#">
+					<form method="POST" class="post-form">{% csrf_token %}
 						<div class="section-top-border">
 							<div class="row">
 								<div class="col-lg-11 col-md-8 pb-20">
 									<h3 class="mb-30">Nom de votre recette : </h3>
 										<div class="mt-10">
-											<input type="text" name="Sablé à la canelle" placeholder="Sablé à la canelle" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Sablé à la canelle'" required class="single-input">
+											{{ form.recette_description }}
 										</div>
 								</div>
-								<div class="col-lg-8 col-md-8 pb-20">
+								<!--<div class="col-lg-8 col-md-8 pb-20">
 									<h3 class="mb-30">Vos aliments : </h3>
 										<div class="mt-10">
 											<input type="text" name="carotte" placeholder="Carotte" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Carotte'" required class="single-input">
@@ -29,7 +29,7 @@
 								<div class="col-lg-3 col-md-4 mt-sm-30 element-wrap">
 									<h3 class="mb-30">Les quantités : </h3>									<div class="mt-10">
 										<input type="number" min="0"  max="100000" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input"><br/>
-								</div>
+								</div>-->
 							</div>
                			</div>
 
@@ -38,13 +38,14 @@
 								<div class="col-lg-11 col-md-8 pb-20">
 									<h3 class="mb-30">Description de la recette : </h3>
 									<div class="mt-10">
-										<input type="text" name="mélanger" placeholder="Mélanger" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mélanger'" required class="single-input">
-									</div><br/><br/>
+										{{ form.recette_instructions }}
+
+                                    </div><br/><br/>
 
 									<h3 class="mb-30">Copiez ici l'url de l'image de votre recette : </h3>
 									<div class="mt-10">
-										<input type="text" name="url" placeholder="Url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Url'" required class="single-input">
-									</div>
+										{{ form.image }}
+                                    </div>
 								</div>
 							</div>
                			</div>
@@ -55,10 +56,10 @@
 								<div class="col-lg-11 col-md-8 pb-20">
 									<h3 class="mb-30">Nombre de personnes : </h3>
 										<div class="mt-10">
-											<input type="number" min="0"  max="100" step="1" onfocus="this.placeholder = ''" onblur="this.placeholder = ''" required class="single-input"><br/>
-										</div>
+											{{ form.nombre_part }}
+                                        </div>
 								</div>
-
+<!--
 								<div class="col-lg-11 col-md-8 pb-20">
 									<h3 class="mb-30">Niveau d'activité physique des personnes : </h3>
 									<div class="mt-10">
@@ -97,10 +98,10 @@
 							</div>
                			</div>
 
-
+-->
 						<div class="col-lg-24">
 							<div class="alert-msg" style="text-align: left;"></div>
-							<button class="genric-btn primary" style="float: left;">Envoyer</button>
+							<button type="submit" class="genric-btn primary" style="float: left;">Envoyer</button>
 						</div>
 					</form>
 				</div>
