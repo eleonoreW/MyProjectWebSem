@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <form action="#">
+        <!--<form action="#">
             <div class="section-top-border">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 pb-20">
@@ -25,7 +25,12 @@
                     <button class="genric-btn primary" style="float: center;">Rechercher</button>
                 </div>
             </div>
+        </form>-->
+        <form method='POST' action=''>{%csrf_token %}
+            <input type="text" name="searchName" placeholder="chocolat, carotte..." required >
+            <input type ='submit' placeholder="Chercher">
         </form>
+        <h2>'2'</h2>
 
         <div class="section-top-border">
             <h3 class="mb-30">Nom ingrédient</h3>

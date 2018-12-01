@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
 from Recipes.forms import RecipeForm
-from .models import Recette, Ingredient
+from .models import Recette, Ingredient, Product
 
 
 def index(request):
@@ -35,6 +35,14 @@ def myrecipe(request):
 
 
 def search(request):
+    if (request.method == 'POST'):
+        searchName = request.POST['searchName']
+
+        if searchName != "":
+            posts = Product.objects.using('products').all()
+            #posts = Product.objects.using('products').filter(product_name__icontains = searchName)
+
+            print('count : ' + str(posts.count()))
     return render(request, 'Recipes/search.html')
 
 
