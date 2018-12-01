@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
     {% if user.is_authenticated %}
-        <div class="container">
-        <p>Username : {{ user.username }}</p>
-        <p>Email : {{ user.email }}</p>
-        <p>Height : {{ user.height }}</p>
-        </div>
+
+        <section class="sample-text-area">
+            <div class="container">
+                <div class="title text-center">
+                    <h1 class="text-heading">Mon profil</h1><br/>
+                </div>
+                <p>Nom d'utilisateur : {{ user.username }}</p>
+                <p>Email : {{ user.email }}</p>
+                <p>Mot de passe : {{ user.password }}</p>
+                <p>Sexe : {{ user.sexe }}</p>
+                <p>&Acirc;ge : {{ user.age }}</p>
+                <p>Taille : {{ user.height }}</p>
+                <p>Poids : {{ user.weight }}</p>
+            </div>
+            <br/><br/>
+            <div class="title text-center">
+                <button class  ="genric-btn primary" style="float: center;">Modifier</button>
+            </div>
+        </section>
+
+
     {% else %}
 
     {% endif %}
