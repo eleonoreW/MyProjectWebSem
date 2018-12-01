@@ -34,4 +34,7 @@ def myrecipe(request):
 
 
 
+def search(request):
+    return render(request, 'Recipes/search.html')
+
 
