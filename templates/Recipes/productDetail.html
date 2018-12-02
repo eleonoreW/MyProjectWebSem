@@ -8,13 +8,9 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-10 col-lg-6">
                 <div class="title text-center">
-                    <h1 class="mb-10">{{Product.objects.using('products').filter(id = product_id)}}</h1>
+                    <h1 class="mb-10">{{product.product_name}}</h1>
+                    <h3 class="mb-10">{{product.quantity}}</h3>
                 </div>
-            </div>
-        </div>
-        <div class="container" style="align-content: center">
-            <div class="feature-img" >
-                <img class="img-fluid" src="{{ recipe.image }}" alt="Recipe image">
             </div>
         </div>
         <div class="section-top-border">
@@ -27,73 +23,64 @@
                     </div>
                     <div class="table-row">
                         <div class="serial">Calories</div>
-                        <div class="visit">2000kcal</div>
+                        <div class="visit">{{product.energy_100g}}kcal</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.energy_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Protéines</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.proteins_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.proteins_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Glucides</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.carbohydrates_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.carbohydrates_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Sucre</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.sugars_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.sugars_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Matière grasse</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.fat_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-row">
-                        <div class="serial">Acides gras saturés</div>
-                        <div class="visit">10g</div>
-                        <div class="percentage">
-                            <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.fat_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Fibre</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.fiber_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.fiber_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Sel</div>
-                        <div class="visit">10g</div>
+                        <div class="visit">{{product.sodium_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.sodium_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
@@ -102,20 +89,8 @@
         </div>
         <div class="container">
             <h3 class="text-heading">Liste des ingrédients</h3>
-            <p class="sample-text">
-                    <ul class="unordered-list">
-                        {% for ingredient in recipe.ingredient_set.all %}
-                        <li>{{ ingredient.quantity }}g de {{ ingredient.id_ingredient }}</li>
-                        {% endfor %}
-                    </ul>
-            </p>
+            <p class="sample-text">{{product.ingredients_text}} </p>
         </div>
-    <div class="container">
-            <h3 class="text-heading">Préparation</h3>
-            <p class="sample-text">{{ recipe.recette_instructions }}
-            </p>
-        </div>
-
     </div>
 </section>
 <!-- End menu-area Area -->

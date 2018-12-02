@@ -6,4 +6,5 @@ url(r'^$', views.index, name='index'),
 url(r'^(?P<recipe_id>[0-9]+)/$', views.detail, name='detail'),
 url(r'^myrecipe/', views.myrecipe, name='myrecipe'),
 url(r'^search/', views.search, name='search'),
+url(r'^productDetail/(?P<product_id>[0-9]+)/$', views.productdetail, name='productdetail')
 ]

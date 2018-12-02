@@ -20,6 +20,11 @@ def detail(request, recipe_id):
     recipe = get_object_or_404(Recette, pk=recipe_id)
     return render(request, 'Recipes/detail.html', {'recipe': recipe})
 
+def productdetail(request, product_id):
+    product = Product.objects.using('products').filter(id = product_id)
+    context = {'product_id' : product_id, 'product' : product[0]}
+    return render(request, 'Recipes/productDetail.html', context)
+
 def myrecipe(request):
         if request.method == "POST":
             form = RecipeForm(request.POST)
@@ -35,14 +40,16 @@ def myrecipe(request):
 
 
 def search(request):
+    research = ""
+    context = {}
     if (request.method == 'POST'):
         searchName = request.POST['searchName']
 
         if searchName != "":
-            posts = Product.objects.using('products').all()
-            #posts = Product.objects.using('products').filter(product_name__icontains = searchName)
+            research = searchName
+            results = Product.objects.using('products').filter(product_name__icontains = searchName)[:100]
+            context = {'research': research, 'results':results}
 
-            print('count : ' + str(posts.count()))
-    return render(request, 'Recipes/search.html')
+    return render(request, 'Recipes/search.html', context)
 
 
