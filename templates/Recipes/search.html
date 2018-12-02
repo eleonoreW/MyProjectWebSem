@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <form action="#">
+        <!--<form action="#">
             <div class="section-top-border">
                 <div class="row">
                     <div class="col-lg-8 col-md-8 pb-20">
@@ -25,20 +25,27 @@
                     <button class="genric-btn primary" style="float: center;">Rechercher</button>
                 </div>
             </div>
+        </form>-->
+        <form method='POST' action=''>{%csrf_token %}
+            <input type="text" name="searchName" placeholder="chocolat, carotte..." required >
+            <input class="genric-btn primary" type ='submit' placeholder="Chercher">
         </form>
+        {% if research and research is not ''%}
+            <h2>Résultats pour '{{research}}'</h2>
+        {%endif%}
 
-        <div class="section-top-border">
-            <h3 class="mb-30">Nom ingrédient</h3>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="img/elements/d.jpg" alt="" class="img-fluid">
+        {% if results %}
+            {%for product in results%}
+                <div class="section-top-border">
+                    <a class="posts-title" href="{% url 'productdetail' product.id %}"><h3>{{ product.product_name }}</h3></a>
+                    <div class="row">
+                        <div class="col-md-9 mt-sm-20 left-align-p">
+                            <p>{{product.ingredients_text}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-9 mt-sm-20 left-align-p">
-                    <p>Description</p>
-                    <button class="genric-btn primary" style="float: center;">Ajouter</button>
-                </div>
-            </div>
-        </div>
+            {%endfor%}
+        {%endif%}
     </div>
 
 

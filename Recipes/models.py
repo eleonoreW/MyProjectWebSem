@@ -36,3 +36,22 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.id_ingredient
+
+
+class Product(models.Model):
+    id = models.IntegerField(primary_key=True)
+    carbohydrates_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    energy_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    fat_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    fiber_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    #id_product = models.IntegerField(blank=True, null=True)
+    ingredients_text = models.CharField(max_length=2083, blank=True, null=True)
+    product_name = models.CharField(max_length=61, blank=True, null=True)
+    proteins_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    quantity = models.CharField(max_length=29, blank=True, null=True)
+    sodium_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    sugars_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+
+    class Meta:
+        managed = False
+        db_table = 'product'
