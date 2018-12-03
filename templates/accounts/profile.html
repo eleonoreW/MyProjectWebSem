@@ -19,6 +19,17 @@
             <div class="title text-center">
                 <button class  ="genric-btn primary" style="float: center;">Modifier</button>
             </div>
+
+
+                <form method="POST" class="padding">
+                    {% csrf_token %}
+                    <div class="divider"></div>
+                    {{ form.management_form }}
+                        {% for form2 in form %}
+                            {{ form2 }}
+                        {% endfor %}
+                    <button type="submit" class="btn-floating btn-large waves-light waves-effect"><i class="large material-icons">Modifier</i></button>
+                   </form>
         </section>
 
 

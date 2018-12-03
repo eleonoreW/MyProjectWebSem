@@ -105,7 +105,7 @@
             <p class="sample-text">
                     <ul class="unordered-list">
                         {% for ingredient in recipe.ingredient_set.all %}
-                        <li>{{ ingredient.quantity }}g de {{ ingredient }}</li>
+                        <li>{{ ingredient.quantity }}g de <a href="{% url 'productdetail' ingredient %}">{{ ingredient.id_ingredient.product_name }}</a></li>
                         {% endfor %}
                     </ul>
             </p>

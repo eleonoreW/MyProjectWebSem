@@ -65,7 +65,7 @@ class Produit2(models.Model):
     sugars_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
 
     def __str__(self):
-        return self.product_name
+        return str(self.id)
 
 
 class Ingredient(models.Model):
