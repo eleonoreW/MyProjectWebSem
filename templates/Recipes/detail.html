@@ -8,7 +8,7 @@
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-10 col-lg-6">
                 <div class="title text-center">
-                    <h1 class="mb-10">{{Product.objects.using('products').filter(id = product_id)}}</h1>
+                    <h1 class="mb-10">{{recipe.recette_description}}</h1>
                 </div>
             </div>
         </div>
@@ -105,7 +105,7 @@
             <p class="sample-text">
                     <ul class="unordered-list">
                         {% for ingredient in recipe.ingredient_set.all %}
-                        <li>{{ ingredient.quantity }}g de {{ ingredient.id_ingredient }}</li>
+                        <li>{{ ingredient.quantity }}g de {{ ingredient }}</li>
                         {% endfor %}
                     </ul>
             </p>

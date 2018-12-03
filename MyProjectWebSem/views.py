@@ -1,3 +1,4 @@
+import Recipes as Recipes
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -6,7 +7,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
-from Recipes.models import Recette
+from Recipes.models import Recette, Product, Produit2
 
 
 def home(request):
@@ -15,6 +16,23 @@ def home(request):
     return render(request, 'home.html', context)
 
 def contact(request):
+    # results = Product.objects.using('products')
+    # for produit in results:
+    #     produit2 = Produit2(id = produit.id,
+    #     carbohydrates_100g = produit.carbohydrates_100g,
+    #     energy_100g = produit.energy_100g,
+    #     fat_100g = produit.fat_100g,
+    #     fiber_100g = produit.fiber_100g,
+    #     ingredients_text = produit.ingredients_text,
+    #     product_name = produit.product_name,
+    #     proteins_100g = produit.proteins_100g,
+    #     quantity = produit.quantity,
+    #     sodium_100g = produit.sodium_100g,
+    #     sugars_100g =produit.sugars_100g)
+    #     produit2.save()
+
+
+
     return render(request, 'contact.html')
 
 def diets(request):

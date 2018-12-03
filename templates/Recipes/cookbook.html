@@ -68,13 +68,6 @@
                                 <img class="img-fluid" style="width:200px;" src="{{ recipe.image }}" alt="Recipe image">
                             </div>
                             <a class="posts-title" href="{% url 'detail' recipe.id %}"><h3>{{ recipe.recette_description }}</h3></a>
-                            <p class="excert">
-                                <h4>Nombre de parts :</h4>
-                            {{ recipe.nombre_part }}
-                                <h4>Nombre de calories :</h4>
-                            {{ recipe.nbCalories }}
-
-                            </p>
                         </div>
                     </div>
                     <!-- Fin recette -->

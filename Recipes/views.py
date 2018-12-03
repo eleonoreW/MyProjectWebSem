@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
 from Recipes.forms import RecipeForm
-from .models import Recette, Ingredient, Product
+from .models import Recette, Ingredient, Product, Produit2
 
 
 def index(request):
@@ -21,7 +21,7 @@ def detail(request, recipe_id):
     return render(request, 'Recipes/detail.html', {'recipe': recipe})
 
 def productdetail(request, product_id):
-    product = Product.objects.using('products').filter(id = product_id)
+    product = Produit2.objects.filter(id = product_id)
     context = {'product_id' : product_id, 'product' : product[0]}
     return render(request, 'Recipes/productDetail.html', context)
 
@@ -47,7 +47,7 @@ def search(request):
 
         if searchName != "":
             research = searchName
-            results = Product.objects.using('products').filter(product_name__icontains = searchName)[:100]
+            results = Produit2.objects.filter(product_name__icontains = searchName)[:100]
             context = {'research': research, 'results':results}
 
     return render(request, 'Recipes/search.html', context)

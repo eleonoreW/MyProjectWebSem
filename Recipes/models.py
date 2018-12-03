@@ -14,7 +14,6 @@ class Recette(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True, blank=True)
     nombre_part = models.IntegerField(default=0);
     author = models.ForeignKey(User, on_delete=models.DO_NOTHING ,blank=True, null=True)
-    nbCalories = models.BigIntegerField(default=0,blank=True, null=True)
     image = models.URLField(default='https://cb2.scene7.com/is/image/CB2/BlackClayDinnerPlate11inSHF16/?$web_product_hero$&161208101132&wid=625&hei=625',blank=True, null=True)
 
     def __str__(self):
@@ -29,13 +28,7 @@ class Recette(models.Model):
     was_published_recently.short_description = 'Published recently?'
 
 
-class Ingredient(models.Model):
-    recette = models.ForeignKey(Recette, on_delete=models.DO_NOTHING, )
-    id_ingredient = models.CharField(max_length=200)
-    quantity = models.IntegerField(default=0)
 
-    def __str__(self):
-        return self.id_ingredient
 
 
 class Product(models.Model):
@@ -55,3 +48,30 @@ class Product(models.Model):
     class Meta:
         managed = False
         db_table = 'product'
+
+
+class Produit2(models.Model):
+    id = models.IntegerField(primary_key=True)
+    carbohydrates_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    energy_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    fat_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    fiber_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    #id_product = models.IntegerField(blank=True, null=True)
+    ingredients_text = models.CharField(max_length=2083, blank=True, null=True)
+    product_name = models.CharField(max_length=61, blank=True, null=True)
+    proteins_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    quantity = models.CharField(max_length=29, blank=True, null=True)
+    sodium_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+    sugars_100g = models.FloatField(blank=True, null=True)  # This field type is a guess.
+
+    def __str__(self):
+        return self.product_name
+
+
+class Ingredient(models.Model):
+    recette = models.ForeignKey(Recette, on_delete=models.DO_NOTHING, )
+    id_ingredient = models.ForeignKey(Produit2, on_delete=models.DO_NOTHING, )
+    quantity = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.id_ingredient)
