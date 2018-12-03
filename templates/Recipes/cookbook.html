@@ -55,49 +55,19 @@
     <section class="post-content-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 posts-list align-content-center">
                     {% for recipe in latest_recipe_list %}
-                    <!-- Une recette -->
-                    <div class="single-post row ">
-                        <div class="col-lg-3  col-md-3 meta-details">
-                            <div class="user-details row">
-                            </div>
+                        <div class="col-lg-4 col-sm-6 portfolio-item">
+                          <div class="card h-100">
+                            <a href="#"><img class="card-img-top" style="width: 350px;height: 350px;background-position: center center;background-repeat: no-repeat;" src="{{ recipe.image }}" alt="Recette"></a>
+                            <div class="card-body">
+                              <h4 class="card-title">
+                                <a href="{% url 'detail' recipe.id %}">{{ recipe.recette_description }}</a>
+                              </h4>
+                             </div>
+                          </div>
                         </div>
-                        <div class="col-lg-12 col-md-12 ">
-                            <div class="feature-img">
-                                <img class="img-fluid" style="width:200px;" src="{{ recipe.image }}" alt="Recipe image">
-                            </div>
-                            <a class="posts-title" href="{% url 'detail' recipe.id %}"><h3>{{ recipe.recette_description }}</h3></a>
-                        </div>
-                    </div>
-                    <!-- Fin recette -->
+
                        {% endfor %}
-
-                    <!-- Pagination-->
-                    <nav class="blog-pagination justify-content-center d-flex">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-left"></span>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a href="#" class="page-link">01</a></li>
-                            <li class="page-item"><a href="cookbook_deux.html" class="page-link">02</a></li>
-                            <li class="page-item"><a href="cookbook_trois.html" class="page-link">03</a></li>
-
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next">
-                                    <span aria-hidden="true">
-                                        <span class="lnr lnr-chevron-right"></span>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
             </div>
         </div>
     </section>

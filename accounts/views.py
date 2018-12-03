@@ -20,14 +20,14 @@ class SignUp(generic.CreateView):
     template_name = 'accounts/signup.html'
 
 @login_required()  # only logged in users should access this
-def profile(pk, request):
-    # querying the User object with pk from url
-    user = User.objects.get(pk=pk)
-    logger.error(pk)
+def profile(request):
+    if request.user.is_authenticated:
+        user = request.user
+        # querying the User object with pk from url
 
-    # prepopulate UserProfileForm with retrieved user values from above.
-    a = UserProfile.objects.get(pk=1)
-    form = UserProfileForm(request.POST, instance=a)
-    form.save()
-    return render(request, 'accounts/profile.html')
+        # prepopulate UserProfileForm with retrieved user values from above.
+        a = UserProfile.objects.get(user=user)
+        form = UserProfileForm(request.POST, instance=a)
+        form.save()
+        return render(request, 'accounts/profile.html')
 
