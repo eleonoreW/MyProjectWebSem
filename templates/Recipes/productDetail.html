@@ -18,71 +18,78 @@
                 <div class="progress-table">
                     <div class="table-head">
                         <div class="serial">Apports</div>
-                        <div class="visit">Par portion</div>
-                        <div class="percentage">Pourcentage par portion</div>
+                        <div class="visit">Par portion (100g)</div>
+                        <div class="percentage">Pourcentage par portion (100g)</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Calories</div>
                         <div class="visit">{{product.energy_100g}}kcal</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.energy_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width:{{pEnergy}}%" aria-valuenow="{{pEnergy}}" aria-valuemin="0" aria-valuemax="100" ></div>
                             </div>
                         </div>
+                        <div class="visit">{{pEnergy}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Protéines</div>
                         <div class="visit">{{product.proteins_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.proteins_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pProteins}}%" aria-valuenow="{{pProteins}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pProteins}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Glucides</div>
                         <div class="visit">{{product.carbohydrates_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.carbohydrates_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pCarbohydrates}}%" aria-valuenow="{{pCarbohydrates}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pCarbohydrates}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Sucre</div>
                         <div class="visit">{{product.sugars_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.sugars_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pSugars}}%" aria-valuenow="{{pSugars}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pSugars}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Matière grasse</div>
                         <div class="visit">{{product.fat_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.fat_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pFat}}%" aria-valuenow="{{pFat}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pFat}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Fibre</div>
                         <div class="visit">{{product.fiber_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.fiber_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pFiber}}%" aria-valuenow="{{pFiber}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pFiber}}%</div>
                     </div>
                     <div class="table-row">
                         <div class="serial">Sel</div>
                         <div class="visit">{{product.sodium_100g}}g</div>
                         <div class="percentage">
                             <div class="progress">
-                                <div class="progress-bar color-1" role="progressbar" style="width: 80%" aria-valuenow="{{product.sodium_100g}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar color-1" role="progressbar" style="width: {{pSodium}}%" aria-valuenow="{{pSodium}}" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
+                        <div class="visit">{{pSodium}}%</div>
                     </div>
                 </div>
             </div>
